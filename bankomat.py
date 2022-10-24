@@ -1,35 +1,35 @@
 #!/usr/bin/env python3
 from sys import stdout, stderr
 
-############################################################################
-while True:
-    try:
-        line = input("bankomat >> ")
-        amount = int(line)
-        main(amount)
-    except EOFError:
-        exit(0)
-    except KeyboardInterrupt:
-        stderr.write("Program byl přerušen z klávecnice.")
-        exit(1)
-    except ValueError:
-        stdout.write("ERROR\n")
 
-
-class Bankomat():
+class Bankomat:
     TREZORFILE = "trezor.txt"
     trezor = {}
-    
+
     def read():
-        trezor = {}
-        return trezor
+        return True or False
 
     def write():
-        pass
-    
+        return True or False
+
     def make(amount):
-        return 0
+        return True or False
 
 
 if __name__ == "__main__":
-    exit(main())
+    bankomat = Bankomat
+
+    while True:
+        try:
+            line = input("bankomat >> ")
+            number = int(line)
+            bankomat.read()
+            bankomat.make(number)
+            bankomat.write()
+        except EOFError:
+            exit(0)
+        except KeyboardInterrupt:
+            stderr.write("Program byl přerušen z klávecnice.")
+            exit(1)
+        except ValueError:
+            stdout.write("ERROR\n")
