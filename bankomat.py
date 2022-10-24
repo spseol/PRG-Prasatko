@@ -4,7 +4,9 @@ from sys import stdout, stderr
 ############################################################################
 while True:
     try:
-        line = input("bankomat>> ")
+        line = input("bankomat >> ")
+        amount = int(line)
+        main(amount)
     except EOFError:
         exit(0)
     except KeyboardInterrupt:
@@ -13,20 +15,20 @@ while True:
     except ValueError:
         stdout.write("ERROR\n")
 
-TREZORFILE = "trezor.txt"
 
-
-def read(trezorfile):
+class Bankomat():
+    TREZORFILE = "trezor.txt"
     trezor = {}
-    return trezor
+    
+    def read():
+        trezor = {}
+        return trezor
 
-
-def write(trezorfile, trezor):
-    pass
-
-
-def main():
-    return 0
+    def write():
+        pass
+    
+    def make(amount):
+        return 0
 
 
 if __name__ == "__main__":
