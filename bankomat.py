@@ -3,21 +3,23 @@ from sys import stdout, stderr
 
 
 class Bankomat:
-    TREZORFILE = "trezor.txt"
     trezor = {}
 
-    def read():
+    def __init__(self, trezorfile):
+        self.trezorfile = trezorfile
+
+    def read(self):
         return True or False
 
-    def write():
+    def write(self):
         return True or False
 
-    def make(amount):
+    def make(self, amount):
         return True or False
 
 
 if __name__ == "__main__":
-    bankomat = Bankomat
+    bankomat = Bankomat("trezor.txt")
 
     while True:
         try:
@@ -27,9 +29,10 @@ if __name__ == "__main__":
             bankomat.make(number)
             bankomat.write()
         except EOFError:
+            print("\nExit")
             exit(0)
         except KeyboardInterrupt:
-            stderr.write("Program byl přerušen z klávecnice.")
+            stderr.write("\nProgram byl přerušen z klávecnice.")
             exit(1)
         except ValueError:
-            stdout.write("ERROR\n")
+            stdout.write("ERROR: Nesprávná hodnota.\n")
