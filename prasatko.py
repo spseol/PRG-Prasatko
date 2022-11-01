@@ -2,7 +2,7 @@
 from sys import stdout, stderr
 
 
-class Bankomat:
+class Prasatko:
     trezor = {}
 
     def __init__(self, trezorfile):
@@ -19,15 +19,15 @@ class Bankomat:
 
 
 if __name__ == "__main__":
-    bankomat = Bankomat("trezor.txt")
+    prasatko = Prasatko("umbilikus.txt")
 
     while True:
         try:
-            line = input("bankomat >> ")
+            line = input("prasatko >> ")
             number = int(line)
-            bankomat.read()
-            bankomat.make(number)
-            bankomat.write()
+            prasatko.read()
+            prasatko.make(number)
+            prasatko.write()
         except EOFError:
             print("\nExit")
             exit(0)
